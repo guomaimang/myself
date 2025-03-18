@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default function Home() {
           <SkillSection />
           <WorkExperienceSection />
           <CampusSection />
-          <ProjectSection />
+          {/* <ProjectSection /> */}
         </div>
         <Footer />
       </ScrollArea>
@@ -45,11 +45,11 @@ function IntroSection() {
         <div className="relative flex items-center justify-between p-4">
           <div className="flex items-center">
             <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 mr-3">
-              <Github className="w-5 h-5" />
+              <Package className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-medium">Open Source Portfolio</h3>
-              <p className="text-sm text-muted-foreground">View my projects and contributions</p>
+              <h3 className="font-medium">Check My Projects!</h3>
+              <p className="text-sm text-muted-foreground">View my open source projects and contributions!</p>
             </div>
           </div>
           <div className="flex items-center space-x-1 bg-primary/10 rounded-full px-3 py-1 text-xs font-medium">
@@ -57,7 +57,6 @@ function IntroSection() {
             <ArrowRight className="w-3.5 h-3.5" />
           </div>
         </div>
-        <div className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
       </Link>
       <Card
         className={`relative p-4 rounded-lg w-full h-fit flex flex-col pt-6 text-center md:text-left`}
