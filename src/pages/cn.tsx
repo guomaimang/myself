@@ -35,7 +35,7 @@ export default function Home() {
               className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>Back to Home</span>
+              <span>Back to Blog Home</span>
             </a>
             <Link
               href="/"
