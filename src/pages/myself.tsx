@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter, Rss } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -22,6 +22,7 @@ export default function Home() {
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
           <IntroSection />
+          <ContactSection />
           <SkillSection />
           <PartnerSection />
           <WorkExperienceSection />
@@ -53,7 +54,7 @@ function IntroSection() {
         <div
           className={`flex flex-col md:flex-row items-center justify-center mb-6`}
         >
-          <div className={"w-20 h-20 mr-6"}>
+          <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
             <Image
               width={80}
               height={80}
@@ -308,14 +309,14 @@ function WorkExperienceSection() {
       logo: "/logo/tencent.png",
       position: "SRE App Development, Interactive Entertainment Group",
       period: "2024.5 - 2024.11",
-      location: "Kexing Science Park, Nanshan District, Shenzhen, China",
+      location: "Shenzhen, China",
     },
     {
       company: "PwC Hong Kong (普华永道香港)",
       logo: "/logo/pwc.jpg",
       position: "Digital Consulting (Finance Team)",
       period: "2023.1 - 2023.6",
-      location: "25/F, Edinburgh Tower The Landmark, 15 Queen's Road Central, Hong Kong",
+      location: "Central, Hong Kong",
     },
   ];
 
@@ -334,14 +335,78 @@ function WorkExperienceSection() {
             </div>
             <div>
               <span className="text-lg font-medium">{exp.company}</span>
-              <p className="text-sm text-muted-foreground">{exp.position}</p>
+
               <p className="text-sm text-muted-foreground">
                 <span className="inline-block mr-2">{exp.period}</span>
               </p>
+
+              <p className="text-sm text-muted-foreground">{exp.position}</p>
+
               <p className="text-sm text-muted-foreground">{exp.location}</p>
             </div>
           </div>
         ))}
+      </div>
+    </Card>
+  );
+}
+
+function ContactSection() {
+  return (
+    <Card className={`relative w-full h-fit p-4`}>
+      <CardTitle className="text-base mb-2">Contact Info</CardTitle>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <MapPin className="w-4 h-4" />
+          </div>
+          <div>
+            <span className="text-xs font-medium">Current Location</span>
+            <p className="text-xs text-muted-foreground">Wan Chai, Hong Kong</p>
+          </div>
+        </div>
+        
+        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Mail className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">Email</span>
+            <p className="text-xs text-muted-foreground flex items-center">
+              hirsunmw@outlook.com
+              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded">有效</span>
+            </p>
+          </div>
+          <a href="mailto:hirsunmw@outlook.com" className="ml-auto">
+            <ExternalLink className="w-3 h-3 text-muted-foreground" />
+          </a>
+        </div>
+        
+        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Github className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">Github</span>
+            <p className="text-xs text-muted-foreground">@guomaimang</p>
+          </div>
+          <a href="https://github.com/guomaimang" target="_blank" rel="noopener noreferrer" className="ml-auto">
+            <ExternalLink className="w-3 h-3 text-muted-foreground" />
+          </a>
+        </div>
+        
+        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Linkedin className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">LinkedIn</span>
+            <p className="text-xs text-muted-foreground">@hanjiaming</p>
+          </div>
+          <a href="https://linkedin.com/in/hanjiaming" target="_blank" rel="noopener noreferrer" className="ml-auto">
+            <ExternalLink className="w-3 h-3 text-muted-foreground" />
+          </a>
+        </div>
       </div>
     </Card>
   );
