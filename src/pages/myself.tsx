@@ -22,6 +22,7 @@ export default function Home() {
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
           <IntroSection />
+          <CampusSection />
           <ContactSection />
           <SkillSection />
           <PartnerSection />
@@ -52,7 +53,7 @@ function IntroSection() {
       >
         <BorderBeam />
         <div
-          className={`flex flex-col md:flex-row items-center justify-center mb-3`}
+          className={`flex flex-col md:flex-row items-center justify-center mb-6`}
         >
           <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
             <Image
@@ -194,6 +195,90 @@ function IntroSection() {
         </div>
       </Card>
     </div>
+  );
+}
+
+function CampusSection() {
+  const campuses = [
+    {
+      name: "The Chinese University of Hong Kong",
+      nameCn: "香港中文大学",
+      logo: "https://pic.hanjiaming.com.cn/2024/08/22/2ba3132608c7b.png",
+      department: "Information Engineering, Department of Information Engineering",
+      degree: "Postgraduate",
+      period: "2024.9",
+      current: true,
+    },
+    {
+      name: "The Hong Kong Polytechnic University",
+      nameCn: "香港理工大学",
+      logo: "https://pic.hanjiaming.com.cn/2022/05/23/093cef8d87b4a.png",
+      department: "Computing, Department of Computing, Faculty of Engineering",
+      degree: "Bachelor's Degree in Science",
+      period: "2020.9 - 2024.7",
+    },
+    {
+      name: "Shanghai Jiao Tong University",
+      nameCn: "上海交通大学",
+      logo: "https://pic.hanjiaming.com.cn/2024/02/24/7b2d2f8a6668f.png",
+      department: "Electronic and Computer Engineering, UM-SJTU Joint Institute",
+      degree: "Spring 2024 Semester Exchange",
+      period: "2024.1 - 2024.6",
+    },
+    {
+      name: "Hebei Hengshui High School",
+      nameCn: "河北衡水中学",
+      logo: "https://pic.hanjiaming.com.cn/2022/05/23/8677f1421c551.png",
+      department: "Senior High School",
+      degree: "Major in Science and Math",
+      period: "2017 - 2020",
+    },
+  ];
+
+  return (
+    <Card className={`relative w-full h-fit p-6`}>
+      <CardTitle>Campus</CardTitle>
+      <div className="mt-4 space-y-4">
+        {campuses.map((campus, index) => (
+          <div 
+            key={index} 
+            className={`group flex flex-col border rounded-lg p-4 hover:bg-secondary/20 transition-colors ${campus.current ? 'border-primary/30 bg-primary/5' : ''}`}
+          >
+            <div className="flex items-center mb-2">
+              <div className="flex-shrink-0 h-10 mr-4 flex items-center">
+                <img
+                  src={campus.logo}
+                  alt={`${campus.name} logo`}
+                  className="h-full max-w-[150px] object-contain"
+                />
+              </div>
+              <div className="ml-auto text-right">
+                <span className="text-xs px-2 py-1 rounded-full bg-secondary/40">
+                  {campus.period}
+                </span>
+                {campus.current && (
+                  <span className="ml-2 text-xs px-2 py-1 rounded-full bg-primary/20 text-primary">
+                    Current
+                  </span>
+                )}
+              </div>
+            </div>
+            
+            <div>
+              <div className="flex items-baseline flex-wrap">
+                <h3 className="text-base font-medium mr-2">{campus.name}</h3>
+                <span className="text-sm text-muted-foreground">{campus.nameCn}</span>
+              </div>
+              
+              <div className="mt-1 space-y-1">
+                <p className="text-sm text-muted-foreground">{campus.degree}</p>
+                <p className="text-sm text-muted-foreground">{campus.department}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
   );
 }
 
