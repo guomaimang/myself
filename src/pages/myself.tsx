@@ -228,7 +228,7 @@ function CampusSection() {
     {
       name: "Chinese University of Hong Kong",
       nameCn: "香港中文大学",
-      logo: "https://pic.hanjiaming.com.cn/2024/08/22/2ba3132608c7b.png",
+      logo: "/campus/cuhk.png",
       department: "Department of Information Engineering",
       degree: "Postgraduate",
       period: "2024.9",
@@ -237,7 +237,7 @@ function CampusSection() {
     {
       name: "Hong Kong Polytechnic University",
       nameCn: "香港理工大学",
-      logo: "https://pic.hanjiaming.com.cn/2022/05/23/093cef8d87b4a.png",
+      logo: "/campus/polyu.png",
       department: "Department of Computing, Faculty of Engineering",
       degree: "Bachelor's Degree in Science in Computing",
       period: "2020.9 - 2024.7",
@@ -245,7 +245,7 @@ function CampusSection() {
     {
       name: "Shanghai Jiao Tong University",
       nameCn: "上海交通大学",
-      logo: "https://pic.hanjiaming.com.cn/2024/02/24/7b2d2f8a6668f.png",
+      logo: "/campus/sjtu.png",
       department: "Electronic and Computer Engineering, UM-SJTU Joint Institute",
       degree: "Spring 2024 Semester Exchange",
       period: "2024.1 - 2024.6",
@@ -253,7 +253,7 @@ function CampusSection() {
     {
       name: "Hebei Hengshui High School",
       nameCn: "河北衡水中学",
-      logo: "https://pic.hanjiaming.com.cn/2022/05/23/8677f1421c551.png",
+      logo: "/campus/hszx.png",
       department: "Senior High School",
       degree: "Major in Science and Math",
       period: "2017.9 - 2020.6",
