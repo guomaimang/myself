@@ -11,6 +11,7 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 import Meteors from "@/components/magicui/meteors";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -365,13 +366,29 @@ function SkillSection() {
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-
     "Cloud Computing",
     "AI Agent",
     "SRE",
     "Solution Architecture",
     "Java Web",
   ];
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    // 初始检查
+    checkIfMobile();
+    
+    // 监听窗口大小变化
+    window.addEventListener('resize', checkIfMobile);
+    
+    // 清理监听器
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   return (
     <Card className={`relative w-full h-fit p-6`}>
@@ -388,7 +405,7 @@ function SkillSection() {
         ))}
       </div>
 
-      <div className="relative flex h-[200px] select-none w-full flex-col items-center justify-center mt-4 overflow-hidden rounded-lg border bg-background md:shadow-xl">
+      <div className="relative flex h-[160px] sm:h-[200px] select-none w-full flex-col items-center justify-center mt-4 overflow-hidden rounded-lg border bg-background md:shadow-xl">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
           {"</>"}
         </span>
@@ -396,10 +413,10 @@ function SkillSection() {
         {techIconsInner.map((icon, index) => (
           <OrbitingCircles
             key={index}
-            className="size-[30px] border-none bg-transparent"
+            className={`${isMobile ? 'size-[25px]' : 'size-[30px]'} border-none bg-transparent`}
             duration={20}
             delay={index * techIconsInnerDelay}
-            radius={80}
+            radius={isMobile ? 60 : 80}
           >
             <img
               src={`https://skillicons.dev/icons?i=${icon}`}
@@ -413,8 +430,8 @@ function SkillSection() {
         {techIconsOuter.map((icon, index) => (
           <OrbitingCircles
             key={index}
-            className="size-[50px] border-none bg-transparent"
-            radius={190}
+            className={`${isMobile ? 'size-[40px]' : 'size-[50px]'} border-none bg-transparent`}
+            radius={isMobile ? 120 : 190}
             duration={20}
             delay={index * techIconsOuterDelay}
             reverse
