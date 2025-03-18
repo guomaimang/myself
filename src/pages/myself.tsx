@@ -87,7 +87,7 @@ function IntroSection() {
             <Image
               width={80}
               height={80}
-              src="https://pic.hanjiaming.com.cn/2025/03/18/e9768a2ac59bb.jpg"
+              src="/e9768a2ac59bb.jpg"
               alt="avatar"
               className={`rounded-full`}
             />
