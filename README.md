@@ -1,7 +1,3 @@
 # My Portfolio
 
-## Tech Stack
-
-- [x] 🍇 Next.js (Static Export)
-- [x] 🍒 TypeScript
-- [x] 🍑 Tailwind CSS
+Use template of zmh-program.github.io
