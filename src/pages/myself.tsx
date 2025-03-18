@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package, ArrowLeft } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package, ArrowLeft, Globe } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -31,8 +31,11 @@ export default function Home() {
             </Link>
             <Link
               href="/myself-cn.html"
-              className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
+              className="inline-flex items-center space-x-1 text-sm border rounded-md px-2 py-1 hover:bg-secondary/20 transition-colors"
             >
+              <Globe className="h-3.5 w-3.5 mr-1" />
+              <span className="font-medium">EN</span>
+              <span className="mx-1 text-muted-foreground">|</span>
               <span>中文</span>
             </Link>
           </div>
