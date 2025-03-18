@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package, ArrowLeft } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -21,6 +21,15 @@ export default function Home() {
       {/* <Meteors /> */}
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
+          <div className="mb-2">
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>Back to Home</span>
+            </Link>
+          </div>
           <IntroSection />
           <ContactSection />
           <SkillSection />
@@ -188,12 +197,9 @@ function IntroSection() {
             <Link
               href="https://github.com/guomaimang"
               target="_blank"
-              className={`ml-auto`}
+              className="ml-auto"
             >
               <Github className={`w-5 h-5`} />
-            </Link>
-            <Link href="/" target="_blank">
-              <Rss className={`w-5 h-5`} />
             </Link>
             <Link href="https://linkedin.com/in/hanjiaming" target="_blank">
               <Linkedin className={`w-5 h-5`} />
