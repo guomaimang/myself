@@ -22,11 +22,10 @@ export default function Home() {
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
           <IntroSection />
-          <CampusSection />
           <ContactSection />
           <SkillSection />
-          <PartnerSection />
           <WorkExperienceSection />
+          <CampusSection />
           <ProjectSection />
         </div>
         <Footer />
@@ -204,7 +203,7 @@ function CampusSection() {
       name: "Chinese University of Hong Kong",
       nameCn: "香港中文大学",
       logo: "https://pic.hanjiaming.com.cn/2024/08/22/2ba3132608c7b.png",
-      department: "Information Engineering, Department of Information Engineering",
+      department: "Department of Information Engineering",
       degree: "Postgraduate",
       period: "2024.9",
       current: true,
@@ -213,8 +212,8 @@ function CampusSection() {
       name: "Hong Kong Polytechnic University",
       nameCn: "香港理工大学",
       logo: "https://pic.hanjiaming.com.cn/2022/05/23/093cef8d87b4a.png",
-      department: "Computing, Department of Computing, Faculty of Engineering",
-      degree: "Bachelor's Degree in Science",
+      department: "Department of Computing, Faculty of Engineering",
+      degree: "Bachelor's Degree in Science in Computing",
       period: "2020.9 - 2024.7",
     },
     {
@@ -244,7 +243,7 @@ function CampusSection() {
             key={index} 
             className={`group relative flex flex-col border rounded-lg p-4 hover:bg-secondary/20 transition-colors`}
           >
-            {campus.current && <BorderBeam />}
+            {campus.current && <BorderBeam colorFrom="#FFD700" colorTo="#FFA500" />}
             <div className="flex items-center mb-2">
               <div className="flex-shrink-0 h-10 mr-4 flex items-center">
                 <img
@@ -347,49 +346,6 @@ function ProjectSection() {
   );
 }
 
-function PartnerSection() {
-  const partners = [
-    {
-      name: "Sh1n3zZ",
-      logo: "/rakuyou.webp",
-      description: "BGP Player / Full Stack / Embedded / OIer / INFP",
-      quote: "看斜阳 洒落金光，恋此景 似琳琅",
-      url: "https://qaq.gs",
-    },
-  ];
-
-  return (
-    <Card className={`relative w-full h-fit p-6`}>
-      <CardTitle>My Partners</CardTitle>
-      <div className="mt-4 grid grid-cols-1 gap-4">
-        {partners.map((partner, index) => (
-          <Link key={index} href={partner.url} target="_blank">
-            <div className="group flex items-center p-4 border rounded-lg hover:bg-secondary/20 transition-colors">
-              <Image
-                src={partner.logo}
-                alt={`${partner.name} logo`}
-                width={80}
-                height={80}
-                className="rounded-lg w-16 h-16 mr-4"
-              />
-              <div>
-                <span className="text-lg font-medium">{partner.name}</span>
-                <p className="text-sm text-muted-foreground">
-                  {partner.description}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  <Quote className="w-3 h-3 mr-1 inline-block" />
-                  {partner.quote}
-                </p>
-              </div>
-              <ArrowRight className="ml-auto shrink-0 mr-2 transition-all group-hover:translate-x-1 duration-300 text-muted-foreground w-4 h-4" />
-            </div>
-          </Link>
-        ))}
-      </div>
-    </Card>
-  );
-}
 
 function WorkExperienceSection() {
   const experiences = [
