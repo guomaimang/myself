@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, ExternalLink, Package, ArrowLeft, Globe } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -11,19 +11,40 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 import Meteors from "@/components/magicui/meteors";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={inter.className}>
-      <Meteors />
+      {/* <Meteors /> */}
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
+          <div className="mb-2 flex justify-between items-center">
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>Back to Home</span>
+            </Link>
+            <Link
+              href="/myself-cn.html"
+              className="inline-flex items-center space-x-1 text-sm border rounded-md px-2 py-1 hover:bg-secondary/20 transition-colors"
+            >
+              <Globe className="h-3.5 w-3.5 mr-1" />
+              <span className="font-medium">EN</span>
+              <span className="mx-1 text-muted-foreground">|</span>
+              <span>中文</span>
+            </Link>
+          </div>
           <IntroSection />
+          <ContactSection />
           <SkillSection />
-          <PartnerSection />
-          <ProjectSection />
+          <WorkExperienceSection />
+          <CampusSection />
+          {/* <ProjectSection /> */}
         </div>
         <Footer />
       </ScrollArea>
@@ -34,107 +55,256 @@ export default function Home() {
 function IntroSection() {
   return (
     <div className={`flex flex-col items-center justify-center`}>
-      <div className="mt-4 border p-2 rounded-md flex items-center w-fit backdrop-blur-sm mb-2">
-        <Quote className="w-3 h-3 mr-1.5 text-foreground" />
-        <Typing
-          content="Nothing is impossible."
-          className="text-sm text-foreground"
-          typingSpeed={150}
-          keyboardSeed={2}
-          keyboardStay={2}
-        />
-      </div>
+      <Link 
+        href="/project.html" 
+        className="group relative w-full mb-4 overflow-hidden rounded-lg border shadow-md transition-all hover:shadow-xl"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 opacity-70 group-hover:opacity-100 transition-opacity"></div>
+        <div className="relative flex items-center justify-between p-4">
+          <div className="flex items-center">
+            <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 mr-3">
+              <Package className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-medium">Check My Projects!</h3>
+              <p className="text-sm text-muted-foreground">View my open source projects and contributions!</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-1 bg-primary/10 rounded-full px-3 py-1 text-xs font-medium">
+            <span>Explore</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </div>
+        </div>
+      </Link>
       <Card
         className={`relative p-4 rounded-lg w-full h-fit flex flex-col pt-6 text-center md:text-left`}
       >
         <BorderBeam />
         <div
-          className={`flex flex-col md:flex-row items-center justify-center mb-6`}
+          className={`flex flex-col md:flex-row items-center justify-center mb-3`}
         >
-          <div className={"w-20 h-20 mr-6"}>
+          <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
             <Image
               width={80}
               height={80}
-              src="/avatar.webp"
+              src="https://pic.hanjiaming.com.cn/2025/03/18/e9768a2ac59bb.jpg"
               alt="avatar"
               className={`rounded-full`}
             />
           </div>
           <div className={`flex flex-col justify-center`}>
-            <h1 className={`text-2xl font-semibold`}>ProgramZmh</h1>
+            <h1 className={`text-2xl font-semibold`}>Hirsun HAN</h1>
             <WordPullUp
               className={`text-base md:text-left font-normal mt-1`}
-              words={"15 y.o. / Co-Founder @LightXi Inc."}
+              words={"22 Y.o. / Hong Kong / CS & AI / CUHK"}
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                CTO
-              </span>
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                INTJ
+            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
+                SDE
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
-                Full Stack Developer
+                Full Stack
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                Open Source Enthusiast
+                AI & LLM
               </span>
-            </div>
-            
-            <div className="flex mt-3 justify-center space-x-3">
-              <Link href="/myself" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
-                About Me
-              </Link>
-              <Link href="/myself-cn" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
-                关于我
-              </Link>
+              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
+                Open Source
+              </span>
             </div>
           </div>
         </div>
         <div>
-          <div className="flex flex-col md:flex-row mb-4 justify-center items-center">
-            <a
-              href="https://trendshift.io/repositories/6369"
+          <div className="flex flex-wrap mb-3 justify-center items-center">
+          <a
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="m-2 w-fit"
             >
               <img
-                src="https://trendshift.io/api/badge/repositories/6369"
-                alt="Chat Nio: #1 Repo Of The Day"
+                src="/cert/0bca59a2487e4.png"
+                alt="Certificate"
+                className="h-12"
               />
             </a>
             <a
-              href="https://spark-lab.city"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="m-2 w-fit"
             >
               <img
-                src="https://spark-lab.city/api/badge?session=1&prize=1"
-                alt="Spark Lab S1 #1 Place"
+                src="/cert/LevelBeta.png"
+                alt="LevelBeta Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/776496addc1ce.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/776496addc1ce.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/c68a6d1546719.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/49c7e482253e6.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/1327a3d9d969f.png"
+                alt="Certificate"
+                className="h-12"
               />
             </a>
           </div>
           <div className={`flex justify-center space-x-4 pr-0.5`}>
             <Link
-              href="https://github.com/zmh-program"
+              href="https://github.com/guomaimang"
               target="_blank"
-              className={`ml-auto`}
+              className="ml-auto"
             >
               <Github className={`w-5 h-5`} />
             </Link>
-            <Link href="https://twitter.com/ProgramZmh" target="_blank">
-              <Twitter className={`w-5 h-5`} />
+            <Link href="https://linkedin.com/in/hanjiaming" target="_blank">
+              <Linkedin className={`w-5 h-5`} />
             </Link>
-            <Link href="mailto:zmh@lightxi.com" target="_blank">
+            <Link href="mailto:hirsunmw@outlook.com" target="_blank">
               <Mail className={`w-5 h-5`} />
             </Link>
           </div>
         </div>
       </Card>
     </div>
+  );
+}
+
+function CampusSection() {
+  const campuses = [
+    {
+      name: "Chinese University of Hong Kong",
+      nameCn: "香港中文大学",
+      logo: "/campus/cuhk.png",
+      department: "Department of Information Engineering",
+      degree: "Postgraduate",
+      period: "2024.9",
+      current: true,
+    },
+    {
+      name: "Hong Kong Polytechnic University",
+      nameCn: "香港理工大学",
+      logo: "/campus/polyu.png",
+      department: "Department of Computing, Faculty of Engineering",
+      degree: "Bachelor's Degree in Science in Computing",
+      period: "2020.9 - 2024.7",
+    },
+    {
+      name: "Shanghai Jiao Tong University",
+      nameCn: "上海交通大学",
+      logo: "/campus/sjtu.png",
+      department: "Electronic and Computer Engineering, UM-SJTU Joint Institute",
+      degree: "Spring 2024 Semester Exchange",
+      period: "2024.1 - 2024.6",
+    },
+    {
+      name: "Hebei Hengshui High School",
+      nameCn: "河北衡水中学",
+      logo: "/campus/hszx.png",
+      department: "Senior High School",
+      degree: "Major in Science and Math",
+      period: "2017.9 - 2020.6",
+    },
+  ];
+
+  return (
+    <Card className={`relative w-full h-fit p-6`}>
+      <CardTitle>Campus</CardTitle>
+      <div className="mt-4 space-y-4">
+        {campuses.map((campus, index) => (
+          <div 
+            key={index} 
+            className={`group relative flex flex-col border rounded-lg p-4 hover:bg-secondary/20 transition-colors`}
+          >
+            {campus.current && <BorderBeam colorFrom="#FFD700" colorTo="#FFA500" />}
+            <div className="flex items-center mb-2">
+              <div className="flex-shrink-0 h-10 mr-4 flex items-center">
+                <img
+                  src={campus.logo}
+                  alt={`${campus.name} logo`}
+                  className="h-full max-w-[150px] object-contain"
+                />
+              </div>
+              <div className="ml-auto text-right">
+                <span className="text-xs px-2 py-1 rounded-full bg-secondary/40">
+                  {campus.period}
+                </span>
+                {campus.current && (
+                  <span className="ml-2 text-xs px-2 py-1 rounded-full bg-primary/20 text-primary">
+                    Current
+                  </span>
+                )}
+              </div>
+            </div>
+            
+            <div>
+              <div className="flex items-baseline flex-wrap">
+                <h3 className="text-base font-medium mr-2">{campus.name}</h3>
+                <span className="text-sm text-muted-foreground">{campus.nameCn}</span>
+              </div>
+              
+              <div className="mt-1 space-y-1">
+                <p className="text-sm text-muted-foreground">{campus.degree}</p>
+                <p className="text-sm text-muted-foreground">{campus.department}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
   );
 }
 
@@ -202,75 +372,153 @@ function ProjectSection() {
   );
 }
 
-function PartnerSection() {
-  const partners = [
+
+function WorkExperienceSection() {
+  const experiences = [
     {
-      name: "Sh1n3zZ",
-      logo: "/rakuyou.webp",
-      description: "BGP Player / Full Stack / Embedded / OIer / INFP",
-      quote: "看斜阳 洒落金光，恋此景 似琳琅",
-      url: "https://qaq.gs",
+      company: "Tencent (腾讯科技)",
+      logo: "/logo/tencent.png",
+      position: "SRE App Development, Interactive Entertainment Group",
+      period: "2024.5 - 2024.11",
+      location: "Shenzhen, China",
+    },
+    {
+      company: "PwC Hong Kong (普华永道香港)",
+      logo: "/logo/pwc.jpg",
+      position: "Digital Consulting (Finance Team)",
+      period: "2023.1 - 2023.6",
+      location: "Central, Hong Kong",
     },
   ];
 
   return (
     <Card className={`relative w-full h-fit p-6`}>
-      <CardTitle>My Partners</CardTitle>
+      <CardTitle>Work Experience</CardTitle>
       <div className="mt-4 grid grid-cols-1 gap-4">
-        {partners.map((partner, index) => (
-          <Link key={index} href={partner.url} target="_blank">
-            <div className="group flex items-center p-4 border rounded-lg hover:bg-secondary/20 transition-colors">
-              <Image
-                src={partner.logo}
-                alt={`${partner.name} logo`}
-                width={80}
-                height={80}
-                className="rounded-lg w-16 h-16 mr-4"
+        {experiences.map((exp, index) => (
+          <div key={index} className="group flex items-center p-4 border rounded-lg hover:bg-secondary/20 transition-colors">
+            <div className="flex-shrink-0 w-16 h-16 mr-4 flex items-center justify-center">
+              <img
+                src={exp.logo}
+                alt={`${exp.company} logo`}
+                className="max-w-full max-h-full object-contain"
               />
-              <div>
-                <span className="text-lg font-medium">{partner.name}</span>
-                <p className="text-sm text-muted-foreground">
-                  {partner.description}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  <Quote className="w-3 h-3 mr-1 inline-block" />
-                  {partner.quote}
-                </p>
-              </div>
-              <ArrowRight className="ml-auto shrink-0 mr-2 transition-all group-hover:translate-x-1 duration-300 text-muted-foreground w-4 h-4" />
             </div>
-          </Link>
+            <div>
+              <span className="text-base font-medium">{exp.company}</span>
+
+              <p className="text-sm text-muted-foreground">
+                <span className="inline-block mr-2">{exp.period}</span>
+              </p>
+
+              <p className="text-sm text-muted-foreground">{exp.position}</p>
+
+              <p className="text-sm text-muted-foreground">{exp.location}</p>
+            </div>
+          </div>
         ))}
       </div>
     </Card>
   );
 }
 
+function ContactSection() {
+  return (
+    <Card className={`relative w-full h-fit p-4`}>
+      <CardTitle className="text-base mb-2">Contact Info</CardTitle>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <MapPin className="w-4 h-4" />
+          </div>
+          <div>
+            <span className="text-xs font-medium">Current Location</span>
+            <p className="text-xs text-muted-foreground">Wan Chai, Hong Kong</p>
+          </div>
+        </div>
+        
+        <a href="mailto:hirsunmw@outlook.com" onClick={(e) => { e.stopPropagation(); }} className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Mail className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">Email</span>
+            <p className="text-xs text-muted-foreground flex items-center">
+              hirsunmw@outlook.com
+              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded"> Fast</span>
+            </p>
+          </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
+        
+        <a href="https://github.com/guomaimang" target="_blank" rel="noopener noreferrer" className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Github className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">Github</span>
+            <p className="text-xs text-muted-foreground">@guomaimang</p>
+          </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
+        
+        <a href="https://linkedin.com/in/hanjiaming" target="_blank" rel="noopener noreferrer" className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
+            <Linkedin className="w-4 h-4" />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-medium">LinkedIn</span>
+            <p className="text-xs text-muted-foreground">@hanjiaming</p>
+          </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
+      </div>
+    </Card>
+  );
+}
+
 function SkillSection() {
-  const techIconsInner = ["c", "go", "rust", "flutter", "next", "nuxt", "ts"];
+  const techIconsInner = ["java", "python", "vite", "react", "aws", "mysql", "nodejs"];
 
   const techIconsOuter = [
-    "python",
-    "lua",
-    "php",
-    "react",
-    "vue",
-    "angular",
-    "less",
-    "pytorch",
-    "tensorflow",
+    "redhat",
+    "prometheus",
+    "azure",
+    "docker",
+    "kubernetes",
+    "nginx",
+    "redis",
+    "rabbitmq",
+    "docker",
   ];
 
   const techIconsInnerDelay = 100 / techIconsInner.length;
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-    "Full Stack",
-    "Network Security",
-    "Machine Learning",
-    "Big Data",
     "Cloud Computing",
+    "AI Agent",
+    "SRE",
+    "Solution Architecture",
+    "Java Web",
   ];
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    // 初始检查
+    checkIfMobile();
+    
+    // 监听窗口大小变化
+    window.addEventListener('resize', checkIfMobile);
+    
+    // 清理监听器
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   return (
     <Card className={`relative w-full h-fit p-6`}>
@@ -287,7 +535,7 @@ function SkillSection() {
         ))}
       </div>
 
-      <div className="relative flex h-[200px] select-none w-full flex-col items-center justify-center mt-4 overflow-hidden rounded-lg border bg-background md:shadow-xl">
+      <div className="relative flex h-[160px] sm:h-[200px] select-none w-full flex-col items-center justify-center mt-4 overflow-hidden rounded-lg border bg-background md:shadow-xl">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
           {"</>"}
         </span>
@@ -295,10 +543,10 @@ function SkillSection() {
         {techIconsInner.map((icon, index) => (
           <OrbitingCircles
             key={index}
-            className="size-[30px] border-none bg-transparent"
+            className={`${isMobile ? 'size-[25px]' : 'size-[30px]'} border-none bg-transparent`}
             duration={20}
             delay={index * techIconsInnerDelay}
-            radius={80}
+            radius={isMobile ? 60 : 80}
           >
             <img
               src={`https://skillicons.dev/icons?i=${icon}`}
@@ -312,8 +560,8 @@ function SkillSection() {
         {techIconsOuter.map((icon, index) => (
           <OrbitingCircles
             key={index}
-            className="size-[50px] border-none bg-transparent"
-            radius={190}
+            className={`${isMobile ? 'size-[40px]' : 'size-[50px]'} border-none bg-transparent`}
+            radius={isMobile ? 120 : 190}
             duration={20}
             delay={index * techIconsOuterDelay}
             reverse
@@ -327,7 +575,14 @@ function SkillSection() {
         ))}
       </div>
       <div className="mt-2 text-center text-sm text-muted-foreground">
-        <span>7 years journey (since 2017)</span>
+        <a 
+          href="https://whois.aliyun.com/domain/hanjiaming.com.cn" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hover:underline"
+        >
+          <span>{new Date().getFullYear() - 2016 + 1} Years Journey (Since 2016).</span>
+        </a>
       </div>
     </Card>
   );
@@ -336,20 +591,7 @@ function SkillSection() {
 function Footer() {
   return (
     <div className={`footer py-6 px-4 text-center text-sm`}>
-      {/*old domain only:
-       <div className={`mb-1`}>
-        <a href="https://beian.miit.gov.cn" target="_blank">
-          <Image
-            src="/gov.webp"
-            alt="beian"
-            width={14}
-            height={14}
-            className={`inline-block mr-1`}
-          />
-          鲁ICP备2022034318号-1
-        </a>
-      </div> */}
-      <div>© 2021-present @zmh-program. All rights reserved.</div>
+      <div> Hirsun's Blog | Serving Since 2011.</div>
     </div>
   );
 }
