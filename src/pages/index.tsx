@@ -16,19 +16,27 @@ import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [rootUrl, setRootUrl] = useState("");
+  
+  useEffect(() => {
+    // 动态获取当前域名的根URL
+    const origin = window.location.origin;
+    setRootUrl(origin);
+  }, []);
+
   return (
     <main className={inter.className}>
       {/* <Meteors /> */}
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
           <div className="mb-2 flex justify-between items-center">
-            <Link
-              href="/"
+            <a
+              href={rootUrl}
               className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Home</span>
-            </Link>
+            </a>
             <Link
               href="/cn"
               className="inline-flex items-center space-x-1 text-sm border rounded-md px-2 py-1 hover:bg-secondary/20 transition-colors"
@@ -53,10 +61,18 @@ export default function Home() {
 }
 
 function IntroSection() {
+  const [projectUrl, setProjectUrl] = useState("");
+
+  useEffect(() => {
+    // 动态获取当前域名的project路径
+    const origin = window.location.origin;
+    setProjectUrl(`${origin}/project`);
+  }, []);
+
   return (
     <div className={`flex flex-col items-center justify-center`}>
-      <Link 
-        href="/project" 
+      <a 
+        href={projectUrl} 
         className="group relative w-full mb-4 overflow-hidden rounded-lg border shadow-md transition-all hover:shadow-xl"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 opacity-70 group-hover:opacity-100 transition-opacity"></div>
@@ -75,7 +91,7 @@ function IntroSection() {
             <ArrowRight className="w-3.5 h-3.5" />
           </div>
         </div>
-      </Link>
+      </a>
       <Card
         className={`relative p-4 rounded-lg w-full h-fit flex flex-col pt-6 text-center md:text-left`}
       >
