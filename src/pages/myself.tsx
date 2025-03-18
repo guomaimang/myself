@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Image from "next/image";
-import { ArrowRight, Github, Mail, Quote, Twitter } from "lucide-react";
+import { ArrowRight, Github, Mail, Quote, Twitter, Rss } from "lucide-react";
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
@@ -37,7 +37,7 @@ function IntroSection() {
       <div className="mt-4 border p-2 rounded-md flex items-center w-fit backdrop-blur-sm mb-2">
         <Quote className="w-3 h-3 mr-1.5 text-foreground" />
         <Typing
-          content="Nothing is impossible."
+          content="Legends never die"
           className="text-sm text-foreground"
           typingSpeed={150}
           keyboardSeed={2}
@@ -55,80 +55,133 @@ function IntroSection() {
             <Image
               width={80}
               height={80}
-              src="/avatar.webp"
+              src="https://pic.hanjiaming.com.cn/2025/03/18/e9768a2ac59bb.jpg"
               alt="avatar"
               className={`rounded-full`}
             />
           </div>
           <div className={`flex flex-col justify-center`}>
-            <h1 className={`text-2xl font-semibold`}>ProgramZmh</h1>
+            <h1 className={`text-2xl font-semibold`}>Hirsun HAN</h1>
             <WordPullUp
               className={`text-base md:text-left font-normal mt-1`}
-              words={"15 y.o. / Co-Founder @LightXi Inc."}
+              words={"22 Y.o. / Hong Kong / CS & AI / CUHK"}
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                CTO
-              </span>
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                INTJ
+            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
+                SDE
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
-                Full Stack Developer
+                Full Stack
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                Open Source Enthusiast
+                AI & LLM
               </span>
-            </div>
-            
-            <div className="flex mt-3 justify-center space-x-3">
-              <Link href="/myself" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
-                About Me
-              </Link>
-              <Link href="/myself-cn" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
-                关于我
-              </Link>
+              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
+                Open Source
+              </span>
             </div>
           </div>
         </div>
         <div>
-          <div className="flex flex-col md:flex-row mb-4 justify-center items-center">
-            <a
-              href="https://trendshift.io/repositories/6369"
+          <div className="flex flex-wrap mb-4 justify-center items-center">
+          <a
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="m-2 w-fit"
             >
               <img
-                src="https://trendshift.io/api/badge/repositories/6369"
-                alt="Chat Nio: #1 Repo Of The Day"
+                src="/cert/0bca59a2487e4.png"
+                alt="Certificate"
+                className="h-12"
               />
             </a>
             <a
-              href="https://spark-lab.city"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="m-2 w-fit"
             >
               <img
-                src="https://spark-lab.city/api/badge?session=1&prize=1"
-                alt="Spark Lab S1 #1 Place"
+                src="/cert/LevelBeta.png"
+                alt="LevelBeta Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/776496addc1ce.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/776496addc1ce.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/c68a6d1546719.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/49c7e482253e6.png"
+                alt="Certificate"
+                className="h-12"
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="m-2 w-fit"
+            >
+              <img
+                src="/cert/1327a3d9d969f.png"
+                alt="Certificate"
+                className="h-12"
               />
             </a>
           </div>
           <div className={`flex justify-center space-x-4 pr-0.5`}>
             <Link
-              href="https://github.com/zmh-program"
+              href="https://github.com/guomaimang"
               target="_blank"
               className={`ml-auto`}
             >
               <Github className={`w-5 h-5`} />
             </Link>
-            <Link href="https://twitter.com/ProgramZmh" target="_blank">
-              <Twitter className={`w-5 h-5`} />
+            <Link href="/" target="_blank">
+              <Rss className={`w-5 h-5`} />
             </Link>
-            <Link href="mailto:zmh@lightxi.com" target="_blank">
+            <Link href="mailto:hirsunmw@outlook.com" target="_blank">
               <Mail className={`w-5 h-5`} />
             </Link>
           </div>
@@ -247,29 +300,30 @@ function PartnerSection() {
 }
 
 function SkillSection() {
-  const techIconsInner = ["c", "go", "rust", "flutter", "next", "nuxt", "ts"];
+  const techIconsInner = ["java", "python", "vite", "react", "aws", "mysql", "nodejs"];
 
   const techIconsOuter = [
-    "python",
-    "lua",
-    "php",
-    "react",
-    "vue",
-    "angular",
-    "less",
-    "pytorch",
-    "tensorflow",
+    "redhat",
+    "prometheus",
+    "azure",
+    "docker",
+    "kubernetes",
+    "nginx",
+    "redis",
+    "rabbitmq",
+    "docker",
   ];
 
   const techIconsInnerDelay = 100 / techIconsInner.length;
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-    "Full Stack",
-    "Network Security",
-    "Machine Learning",
-    "Big Data",
+
     "Cloud Computing",
+    "AI Agent",
+    "SRE",
+    "Solution Architecture",
+    "Java Web",
   ];
 
   return (
@@ -327,7 +381,14 @@ function SkillSection() {
         ))}
       </div>
       <div className="mt-2 text-center text-sm text-muted-foreground">
-        <span>7 years journey (since 2017)</span>
+        <a 
+          href="https://whois.aliyun.com/domain/hanjiaming.com.cn" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hover:underline"
+        >
+          <span>{new Date().getFullYear() - 2016 + 1} Years Journey (Since 2016).</span>
+        </a>
       </div>
     </Card>
   );
@@ -336,20 +397,7 @@ function SkillSection() {
 function Footer() {
   return (
     <div className={`footer py-6 px-4 text-center text-sm`}>
-      {/*old domain only:
-       <div className={`mb-1`}>
-        <a href="https://beian.miit.gov.cn" target="_blank">
-          <Image
-            src="/gov.webp"
-            alt="beian"
-            width={14}
-            height={14}
-            className={`inline-block mr-1`}
-          />
-          鲁ICP备2022034318号-1
-        </a>
-      </div> */}
-      <div>© 2021-present @zmh-program. All rights reserved.</div>
+      <div> Hirsun's Blog | Serving Since 2011.</div>
     </div>
   );
 }
