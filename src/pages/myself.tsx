@@ -53,7 +53,7 @@ function IntroSection() {
       >
         <BorderBeam />
         <div
-          className={`flex flex-col md:flex-row items-center justify-center mb-6`}
+          className={`flex flex-col md:flex-row items-center justify-center mb-3`}
         >
           <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
             <Image
@@ -201,7 +201,7 @@ function IntroSection() {
 function CampusSection() {
   const campuses = [
     {
-      name: "The Chinese University of Hong Kong",
+      name: "Chinese University of Hong Kong",
       nameCn: "香港中文大学",
       logo: "https://pic.hanjiaming.com.cn/2024/08/22/2ba3132608c7b.png",
       department: "Information Engineering, Department of Information Engineering",
@@ -210,7 +210,7 @@ function CampusSection() {
       current: true,
     },
     {
-      name: "The Hong Kong Polytechnic University",
+      name: "Hong Kong Polytechnic University",
       nameCn: "香港理工大学",
       logo: "https://pic.hanjiaming.com.cn/2022/05/23/093cef8d87b4a.png",
       department: "Computing, Department of Computing, Faculty of Engineering",
