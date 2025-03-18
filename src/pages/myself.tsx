@@ -184,6 +184,9 @@ function IntroSection() {
             <Link href="/" target="_blank">
               <Rss className={`w-5 h-5`} />
             </Link>
+            <Link href="https://linkedin.com/in/hanjiaming" target="_blank">
+              <Linkedin className={`w-5 h-5`} />
+            </Link>
             <Link href="mailto:hirsunmw@outlook.com" target="_blank">
               <Mail className={`w-5 h-5`} />
             </Link>
@@ -366,7 +369,7 @@ function ContactSection() {
           </div>
         </div>
         
-        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+        <a href="mailto:hirsunmw@outlook.com" onClick={(e) => { e.stopPropagation(); }} className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
             <Mail className="w-4 h-4" />
           </div>
@@ -374,15 +377,13 @@ function ContactSection() {
             <span className="text-xs font-medium">Email</span>
             <p className="text-xs text-muted-foreground flex items-center">
               hirsunmw@outlook.com
-              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded">有效</span>
+              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded"> Fast</span>
             </p>
           </div>
-          <a href="mailto:hirsunmw@outlook.com" className="ml-auto">
-            <ExternalLink className="w-3 h-3 text-muted-foreground" />
-          </a>
-        </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
         
-        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+        <a href="https://github.com/guomaimang" target="_blank" rel="noopener noreferrer" className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
             <Github className="w-4 h-4" />
           </div>
@@ -390,12 +391,10 @@ function ContactSection() {
             <span className="text-xs font-medium">Github</span>
             <p className="text-xs text-muted-foreground">@guomaimang</p>
           </div>
-          <a href="https://github.com/guomaimang" target="_blank" rel="noopener noreferrer" className="ml-auto">
-            <ExternalLink className="w-3 h-3 text-muted-foreground" />
-          </a>
-        </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
         
-        <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
+        <a href="https://linkedin.com/in/hanjiaming" target="_blank" rel="noopener noreferrer" className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors no-underline cursor-pointer">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
             <Linkedin className="w-4 h-4" />
           </div>
@@ -403,10 +402,8 @@ function ContactSection() {
             <span className="text-xs font-medium">LinkedIn</span>
             <p className="text-xs text-muted-foreground">@hanjiaming</p>
           </div>
-          <a href="https://linkedin.com/in/hanjiaming" target="_blank" rel="noopener noreferrer" className="ml-auto">
-            <ExternalLink className="w-3 h-3 text-muted-foreground" />
-          </a>
-        </div>
+          <ExternalLink className="w-3 h-3 text-muted-foreground" />
+        </a>
       </div>
     </Card>
   );
