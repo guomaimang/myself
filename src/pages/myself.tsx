@@ -230,7 +230,7 @@ function CampusSection() {
       logo: "https://pic.hanjiaming.com.cn/2022/05/23/8677f1421c551.png",
       department: "Senior High School",
       degree: "Major in Science and Math",
-      period: "2017 - 2020",
+      period: "2017.9 - 2020.6",
     },
   ];
 
@@ -379,7 +379,7 @@ function WorkExperienceSection() {
               />
             </div>
             <div>
-              <span className="text-lg font-medium">{exp.company}</span>
+              <span className="text-base font-medium">{exp.company}</span>
 
               <p className="text-sm text-muted-foreground">
                 <span className="inline-block mr-2">{exp.period}</span>
