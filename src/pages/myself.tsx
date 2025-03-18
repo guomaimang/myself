@@ -37,7 +37,7 @@ export default function Home() {
 function IntroSection() {
   return (
     <div className={`flex flex-col items-center justify-center`}>
-      <div className="mt-4 border p-2 rounded-md flex items-center w-fit backdrop-blur-sm mb-2">
+      {/* <div className="mt-4 border p-2 rounded-md flex items-center w-fit backdrop-blur-sm mb-2">
         <Quote className="w-3 h-3 mr-1.5 text-foreground" />
         <Typing
           content="Legends never die"
@@ -46,7 +46,7 @@ function IntroSection() {
           keyboardSeed={2}
           keyboardStay={2}
         />
-      </div>
+      </div> */}
       <Card
         className={`relative p-4 rounded-lg w-full h-fit flex flex-col pt-6 text-center md:text-left`}
       >
@@ -87,7 +87,7 @@ function IntroSection() {
           </div>
         </div>
         <div>
-          <div className="flex flex-wrap mb-4 justify-center items-center">
+          <div className="flex flex-wrap mb-3 justify-center items-center">
           <a
               href="#"
               target="_blank"
