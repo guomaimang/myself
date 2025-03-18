@@ -4,7 +4,7 @@ import { ArrowRight, Github, Mail, Quote, Twitter, Rss, MapPin, Linkedin, Extern
 import { Typing } from "@/components/typing";
 import Projects from "@/components/projects";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, getImagePath } from "@/lib/utils";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import WordPullUp from "@/components/magicui/word-pull-up";
@@ -30,13 +30,13 @@ export default function Home() {
               <span>Back to Home</span>
             </Link>
             <Link
-              href="/myself-cn.html"
+              href="/"
               className="inline-flex items-center space-x-1 text-sm border rounded-md px-2 py-1 hover:bg-secondary/20 transition-colors"
             >
               <Globe className="h-3.5 w-3.5 mr-1" />
-              <span className="font-medium">EN</span>
-              <span className="mx-1 text-muted-foreground">|</span>
               <span>中文</span>
+              <span className="mx-1 text-muted-foreground">|</span>
+              <span className="font-medium">EN</span>
             </Link>
           </div>
           <IntroSection />
@@ -56,7 +56,7 @@ function IntroSection() {
   return (
     <div className={`flex flex-col items-center justify-center`}>
       <Link 
-        href="/project.html" 
+        href="/project" 
         className="group relative w-full mb-4 overflow-hidden rounded-lg border shadow-md transition-all hover:shadow-xl"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 opacity-70 group-hover:opacity-100 transition-opacity"></div>
@@ -84,12 +84,12 @@ function IntroSection() {
           className={`flex flex-col md:flex-row items-center justify-center mb-3`}
         >
           <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
-            <Image
+            <img
               width={80}
               height={80}
-              src="/e9768a2ac59bb.jpg"
+              src="/myself/e9768a2ac59bb.jpg"
               alt="avatar"
-              className={`rounded-full`}
+              className={`rounded-full w-20 h-20 object-cover`}
             />
           </div>
           <div className={`flex flex-col justify-center`}>
@@ -124,9 +124,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/0bca59a2487e4.png"
+                width={40}
+                height={40}
+                src="/myself/cert/0bca59a2487e4.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -136,9 +138,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/LevelBeta.png"
+                width={40}
+                height={40}
+                src="/myself/cert/LevelBeta.png"
                 alt="LevelBeta Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -148,9 +152,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/776496addc1ce.png"
+                width={40}
+                height={40}
+                src="/myself/cert/776496addc1ce.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -160,9 +166,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/776496addc1ce.png"
+                width={40}
+                height={40}
+                src="/myself/cert/776496addc1ce.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -172,9 +180,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/c68a6d1546719.png"
+                width={40}
+                height={40}
+                src="/myself/cert/c68a6d1546719.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -184,9 +194,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/49c7e482253e6.png"
+                width={40}
+                height={40}
+                src="/myself/cert/49c7e482253e6.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
             <a
@@ -196,9 +208,11 @@ function IntroSection() {
               className="m-2 w-fit"
             >
               <img
-                src="/cert/1327a3d9d969f.png"
+                width={40}
+                height={40}
+                src="/myself/cert/1327a3d9d969f.png"
                 alt="Certificate"
-                className="h-12"
+                className="h-12 object-contain"
               />
             </a>
           </div>
@@ -273,7 +287,7 @@ function CampusSection() {
             <div className="flex items-center mb-2">
               <div className="flex-shrink-0 h-10 mr-4 flex items-center">
                 <img
-                  src={campus.logo}
+                  src={`/myself${campus.logo}`}
                   alt={`${campus.name} logo`}
                   className="h-full max-w-[150px] object-contain"
                 />
@@ -399,7 +413,7 @@ function WorkExperienceSection() {
           <div key={index} className="group flex items-center p-4 border rounded-lg hover:bg-secondary/20 transition-colors">
             <div className="flex-shrink-0 w-16 h-16 mr-4 flex items-center justify-center">
               <img
-                src={exp.logo}
+                src={`/myself${exp.logo}`}
                 alt={`${exp.company} logo`}
                 className="max-w-full max-h-full object-contain"
               />

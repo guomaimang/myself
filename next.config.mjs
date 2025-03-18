@@ -35,14 +35,15 @@ const nextConfig = withPWA({
   output: "export",
   images: {
     unoptimized: true,
+    path: "/myself/_next/image",
   },
   trailingSlash: false,
+  basePath: '/myself',
   // 确保生成指定文件名的HTML
   exportPathMap: async function() {
     return {
       '/': { page: '/' },
-      '/myself': { page: '/myself' },
-      '/myself-cn': { page: '/myself-cn' },
+      '/cn': { page: '/cn' },
     };
   },
   async headers() {
