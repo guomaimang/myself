@@ -242,8 +242,9 @@ function CampusSection() {
         {campuses.map((campus, index) => (
           <div 
             key={index} 
-            className={`group flex flex-col border rounded-lg p-4 hover:bg-secondary/20 transition-colors ${campus.current ? 'border-primary/30 bg-primary/5' : ''}`}
+            className={`group relative flex flex-col border rounded-lg p-4 hover:bg-secondary/20 transition-colors`}
           >
+            {campus.current && <BorderBeam />}
             <div className="flex items-center mb-2">
               <div className="flex-shrink-0 h-10 mr-4 flex items-center">
                 <img
