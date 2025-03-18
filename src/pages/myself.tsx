@@ -52,7 +52,7 @@ function IntroSection() {
       >
         <BorderBeam />
         <div
-          className={`flex flex-col md:flex-row items-center justify-center mb-6`}
+          className={`flex flex-col md:flex-row items-center justify-center mb-3`}
         >
           <div className={"w-20 h-20 md:mr-6 mb-4 md:mb-0"}>
             <Image
