@@ -23,6 +23,7 @@ export default function Home() {
           <IntroSection />
           <SkillSection />
           <PartnerSection />
+          <WorkExperienceSection />
           <ProjectSection />
         </div>
         <Footer />
@@ -293,6 +294,52 @@ function PartnerSection() {
               <ArrowRight className="ml-auto shrink-0 mr-2 transition-all group-hover:translate-x-1 duration-300 text-muted-foreground w-4 h-4" />
             </div>
           </Link>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+function WorkExperienceSection() {
+  const experiences = [
+    {
+      company: "Tencent (腾讯科技)",
+      logo: "/logo/tencent.png",
+      position: "SRE App Development, Interactive Entertainment Group",
+      period: "2024.5 - 2024.11",
+      location: "Kexing Science Park, Nanshan District, Shenzhen, China",
+    },
+    {
+      company: "PwC Hong Kong (普华永道香港)",
+      logo: "/logo/pwc.jpg",
+      position: "Digital Consulting (Finance Team)",
+      period: "2023.1 - 2023.6",
+      location: "25/F, Edinburgh Tower The Landmark, 15 Queen's Road Central, Hong Kong",
+    },
+  ];
+
+  return (
+    <Card className={`relative w-full h-fit p-6`}>
+      <CardTitle>Work Experience</CardTitle>
+      <div className="mt-4 grid grid-cols-1 gap-4">
+        {experiences.map((exp, index) => (
+          <div key={index} className="group flex items-start p-4 border rounded-lg transition-colors">
+            <div className="min-w-16 mr-4 flex items-center justify-center">
+              <img
+                src={exp.logo}
+                alt={`${exp.company} logo`}
+                className="max-w-16 max-h-16 object-contain"
+              />
+            </div>
+            <div>
+              <span className="text-lg font-medium">{exp.company}</span>
+              <p className="text-sm text-muted-foreground">{exp.position}</p>
+              <p className="text-sm text-muted-foreground">
+                <span className="inline-block mr-2">{exp.period}</span>
+              </p>
+              <p className="text-sm text-muted-foreground">{exp.location}</p>
+            </div>
+          </div>
         ))}
       </div>
     </Card>
