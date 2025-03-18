@@ -323,12 +323,12 @@ function WorkExperienceSection() {
       <CardTitle>Work Experience</CardTitle>
       <div className="mt-4 grid grid-cols-1 gap-4">
         {experiences.map((exp, index) => (
-          <div key={index} className="group flex items-start p-4 border rounded-lg transition-colors">
-            <div className="min-w-16 mr-4 flex items-center justify-center">
+          <div key={index} className="group flex items-center p-4 border rounded-lg hover:bg-secondary/20 transition-colors">
+            <div className="flex-shrink-0 w-16 h-16 mr-4 flex items-center justify-center">
               <img
                 src={exp.logo}
                 alt={`${exp.company} logo`}
-                className="max-w-16 max-h-16 object-contain"
+                className="max-w-full max-h-full object-contain"
               />
             </div>
             <div>
