@@ -37,16 +37,28 @@ export default function Home() {
 function IntroSection() {
   return (
     <div className={`flex flex-col items-center justify-center`}>
-      {/* <div className="mt-4 border p-2 rounded-md flex items-center w-fit backdrop-blur-sm mb-2">
-        <Quote className="w-3 h-3 mr-1.5 text-foreground" />
-        <Typing
-          content="Legends never die"
-          className="text-sm text-foreground"
-          typingSpeed={150}
-          keyboardSeed={2}
-          keyboardStay={2}
-        />
-      </div> */}
+      <Link 
+        href="/project.html" 
+        className="group relative w-full mb-4 overflow-hidden rounded-lg border shadow-md transition-all hover:shadow-xl"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 opacity-70 group-hover:opacity-100 transition-opacity"></div>
+        <div className="relative flex items-center justify-between p-4">
+          <div className="flex items-center">
+            <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 mr-3">
+              <Github className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-medium">Open Source Portfolio</h3>
+              <p className="text-sm text-muted-foreground">View my projects and contributions</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-1 bg-primary/10 rounded-full px-3 py-1 text-xs font-medium">
+            <span>Explore</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </div>
+        </div>
+        <div className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+      </Link>
       <Card
         className={`relative p-4 rounded-lg w-full h-fit flex flex-col pt-6 text-center md:text-left`}
       >
