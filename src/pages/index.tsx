@@ -81,6 +81,15 @@ function IntroSection() {
                 Open Source Enthusiast
               </span>
             </div>
+            
+            <div className="flex mt-3 justify-center space-x-3">
+              <Link href="/myself" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
+                About Me
+              </Link>
+              <Link href="/myself-cn" className="text-xs px-2 py-1 rounded-md border hover:bg-secondary/20 transition-colors">
+                关于我
+              </Link>
+            </div>
           </div>
         </div>
         <div>

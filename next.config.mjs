@@ -36,6 +36,15 @@ const nextConfig = withPWA({
   images: {
     unoptimized: true,
   },
+  trailingSlash: false,
+  // 确保生成指定文件名的HTML
+  exportPathMap: async function() {
+    return {
+      '/': { page: '/' },
+      '/myself': { page: '/myself' },
+      '/myself-cn': { page: '/myself-cn' },
+    };
+  },
   async headers() {
     return [
       {
