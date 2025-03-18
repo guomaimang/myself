@@ -21,13 +21,19 @@ export default function Home() {
       {/* <Meteors /> */}
       <ScrollArea className={`w-full h-full`}>
         <div className={`flex flex-col p-6 space-y-4 max-w-[620px] mx-auto`}>
-          <div className="mb-2">
+          <div className="mb-2 flex justify-between items-center">
             <Link
               href="/"
               className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Home</span>
+            </Link>
+            <Link
+              href="/myself-cn.html"
+              className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
+            >
+              <span>中文</span>
             </Link>
           </div>
           <IntroSection />
