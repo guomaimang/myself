@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title> About Myself | Hirsun HAN</title>
         <link rel="manifest" href="/myself/manifest.json" />
-        <meta name="application-name" content="Minghan Zhang's Portfolio" />
+        <meta name="application-name" content="Hirsun's Portfolio" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta
