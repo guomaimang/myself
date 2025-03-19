@@ -35,7 +35,7 @@ export default function Home() {
               className="inline-flex items-center space-x-1 text-sm text-primary hover:underline transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>Back to Blog Home</span>
+              <span>返回博客主页</span>
             </a>
             <Link
               href="/"
@@ -82,8 +82,8 @@ function IntroSection() {
               <Package className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-medium">Check My Projects!</h3>
-              <p className="text-sm text-muted-foreground">View my open source projects and contributions!</p>
+              <h3 className="font-medium">查看开源项目!</h3>
+              <p className="text-sm text-muted-foreground">了解我的项目和开源社区贡献!</p>
             </div>
           </div>
           <div className="flex items-center space-x-1 bg-primary/10 rounded-full px-3 py-1 text-xs font-medium">
@@ -109,10 +109,10 @@ function IntroSection() {
             />
           </div>
           <div className={`flex flex-col justify-center`}>
-            <h1 className={`text-2xl font-semibold`}>Hirsun HAN</h1>
+            <h1 className={`text-2xl font-semibold`}>韩佳明 (Hirsun)</h1>
             <WordPullUp
               className={`text-base md:text-left font-normal mt-1`}
-              words={"22 Y.o. / Hong Kong / CS & AI / CUHK"}
+              words={"22 Y.o. / 香港 / CS & AI / 香港中文大学"}
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
@@ -120,13 +120,13 @@ function IntroSection() {
                 SDE
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
-                Full Stack
+                全栈开发
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
                 AI & LLM
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                Open Source
+                开源
               </span>
             </div>
           </div>
@@ -256,36 +256,36 @@ function IntroSection() {
 function CampusSection() {
   const campuses = [
     {
-      name: "Chinese University of Hong Kong",
-      nameCn: "香港中文大学",
+      name: "香港中文大学",
+      nameCn: "Chinese University of Hong Kong",
       logo: "/campus/cuhk.png",
-      department: "Department of Information Engineering",
-      degree: "Postgraduate",
+      department: "信息工程学系",
+      degree: "信息工程学, 理学硕士, 在读研究生",
       period: "2024.9",
       current: true,
     },
     {
-      name: "Hong Kong Polytechnic University",
-      nameCn: "香港理工大学",
+      name: "香港理工大学",
+      nameCn: "Hong Kong Polytechnic University",
       logo: "/campus/polyu.png",
-      department: "Department of Computing, Faculty of Engineering",
-      degree: "Bachelor's Degree in Science in Computing",
+      department: "电子计算学系, 工程学院",
+      degree: "计算机科学与技术, 理学学士",
       period: "2020.9 - 2024.7",
     },
     {
-      name: "Shanghai Jiao Tong University",
-      nameCn: "上海交通大学",
+      name: "上海交通大学",
+      nameCn: "Shanghai Jiao Tong University",
       logo: "/campus/sjtu.png",
-      department: "Electronic and Computer Engineering, UM-SJTU Joint Institute",
-      degree: "Spring 2024 Semester Exchange",
+      department: "电子和计算机工程, 上交密院",
+      degree: "2024 年春季学期交换生",
       period: "2024.1 - 2024.6",
     },
     {
-      name: "Hebei Hengshui High School",
-      nameCn: "河北衡水中学",
+      name: "河北衡水中学",
+      nameCn: "Hebei Hengshui High School",
       logo: "/campus/hszx.png",
-      department: "Senior High School",
-      degree: "Major in Science and Math",
+      department: "南校区, 高中学校",
+      degree: "理科组合",
       period: "2017.9 - 2020.6",
     },
   ];
@@ -406,18 +406,18 @@ function ProjectSection() {
 function WorkExperienceSection() {
   const experiences = [
     {
-      company: "Tencent (腾讯科技)",
+      company: "腾讯科技 (Tencent)",
       logo: "/logo/tencent.png",
-      position: "SRE App Development, Interactive Entertainment Group",
+      position: "SRE APP 开发, 腾讯互动娱乐组 (IEG)",
       period: "2024.5 - 2024.11",
-      location: "Shenzhen, China",
+      location: "南山，深圳",
     },
     {
-      company: "PwC Hong Kong (普华永道香港)",
+      company: "普华永道香港 (PwC HK)",
       logo: "/logo/pwc.jpg",
-      position: "Digital Consulting (Finance Team)",
+      position: "数字咨询（金融团队）",
       period: "2023.1 - 2023.6",
-      location: "Central, Hong Kong",
+      location: "中环，香港",
     },
   ];
 
@@ -455,7 +455,7 @@ function WorkExperienceSection() {
 function ContactSection() {
   return (
     <Card className={`relative w-full h-fit p-4`}>
-      <CardTitle className="text-base mb-2">Contact Info</CardTitle>
+      <CardTitle className="text-base mb-2">联系方式</CardTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div className="group flex items-center p-2 border rounded-lg hover:bg-secondary/20 transition-colors">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/30 mr-2">
@@ -463,7 +463,7 @@ function ContactSection() {
           </div>
           <div>
             <span className="text-xs font-medium">Current Location</span>
-            <p className="text-xs text-muted-foreground">Wan Chai, Hong Kong</p>
+            <p className="text-xs text-muted-foreground">灣仔，香港</p>
           </div>
         </div>
         
@@ -475,7 +475,7 @@ function ContactSection() {
             <span className="text-xs font-medium">Email</span>
             <p className="text-xs text-muted-foreground flex items-center">
               hirsunmw@outlook.com
-              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded"> Fast</span>
+              <span className="ml-1 text-[10px] px-1 bg-primary/10 text-primary rounded"> 最有效</span>
             </p>
           </div>
           <ExternalLink className="w-3 h-3 text-muted-foreground" />
@@ -526,10 +526,10 @@ function SkillSection() {
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-    "Cloud Computing",
-    "AI Agent",
+    "云计算",
+    "AI & LLM 智能体",
     "SRE",
-    "Solution Architecture",
+    "解决方案架构",
     "Java Web",
   ];
 
@@ -552,7 +552,7 @@ function SkillSection() {
 
   return (
     <Card className={`relative w-full h-fit p-6`}>
-      <CardTitle>Tech Stack</CardTitle>
+      <CardTitle>技术栈</CardTitle>
 
       <div className="flex flex-wrap gap-2 mt-2">
         {techCategories.map((tag, index) => (
