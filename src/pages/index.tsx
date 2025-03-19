@@ -269,7 +269,7 @@ function CampusSection() {
       nameCn: "香港理工大学",
       logo: "/campus/polyu.png",
       department: "Department of Computing, Faculty of Engineering",
-      degree: "Bachelor's Degree in Science in Computing",
+      degree: "Bachelor of Science Degree in Computing",
       period: "2020.9 - 2024.7",
     },
     {
@@ -413,7 +413,7 @@ function WorkExperienceSection() {
       location: "Shenzhen, China",
     },
     {
-      company: "PwC Hong Kong (普华永道香港)",
+      company: "PwC HK (普华永道香港)",
       logo: "/logo/pwc.jpg",
       position: "Digital Consulting (Finance Team)",
       period: "2023.1 - 2023.6",
