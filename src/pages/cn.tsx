@@ -116,17 +116,14 @@ function IntroSection() {
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
-            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                SDE
-              </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
                 全栈开发
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                AI & LLM
+                AI Agent & 大模型
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                开源
+                云计算工程
               </span>
             </div>
           </div>
@@ -526,11 +523,11 @@ function SkillSection() {
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-    "云计算",
-    "AI & LLM 智能体",
+    "软件开发",
     "SRE",
+    "AI & 大模型",
     "解决方案架构",
-    "Java Web",
+    "客户成功",
   ];
 
   const [isMobile, setIsMobile] = useState(false);
