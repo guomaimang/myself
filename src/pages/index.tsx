@@ -116,17 +116,14 @@ function IntroSection() {
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
-            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                SDE
-              </span>
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
+            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition-all hover:bg-secondary">
                 Full Stack
               </span>
-              <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                AI & LLM
+            <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
+                AI Agent & LLM
               </span>
               <span className="px-2 py-1 m-1 text-xs font-medium rounded-md border bg-secondary/40 cursor-pointer transition hover:bg-secondary">
-                Open Source
+                Cloud Computing
               </span>
             </div>
           </div>
@@ -533,11 +530,11 @@ function SkillSection() {
   const techIconsOuterDelay = 100 / techIconsOuter.length;
 
   const techCategories = [
-    "Cloud Computing",
-    "AI Agent",
+    "SDE",
     "SRE",
+    "AI & LLM",
     "Solution Architecture",
-    "Java Web",
+    "Customer Success"
   ];
 
   const [isMobile, setIsMobile] = useState(false);
