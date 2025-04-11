@@ -406,6 +406,13 @@ function ProjectSection() {
 function WorkExperienceSection() {
   const experiences = [
     {
+      company: "Bytedance (字节跳动)",
+      logo: "/logo/bytedance.png",
+      position: "Cloud Conputing, Volcano Engine (火山引擎)",
+      period: "2025.3",
+      location: "Shenzhen, China",
+    },
+    {
       company: "Tencent (腾讯科技)",
       logo: "/logo/tencent.png",
       position: "SRE App Development, Interactive Entertainment Group",
@@ -417,7 +424,7 @@ function WorkExperienceSection() {
       logo: "/logo/pwc.jpg",
       position: "Digital Consulting (Finance Team)",
       period: "2023.1 - 2023.6",
-      location: "Central, Hong Kong",
+      location: "Central, Hong Kong SAR",
     },
   ];
 

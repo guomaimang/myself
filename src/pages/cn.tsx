@@ -406,6 +406,13 @@ function ProjectSection() {
 function WorkExperienceSection() {
   const experiences = [
     {
+      company: "字节跳动 (抖音集团)",
+      logo: "/logo/bytedance.png",
+      position: "云计算, 火山引擎",
+      period: "2025.3",
+      location: "南山，深圳",
+    },
+    {
       company: "腾讯科技 (Tencent)",
       logo: "/logo/tencent.png",
       position: "SRE APP 开发, 腾讯互动娱乐组 (IEG)",
@@ -417,7 +424,7 @@ function WorkExperienceSection() {
       logo: "/logo/pwc.jpg",
       position: "数字咨询（金融团队）",
       period: "2023.1 - 2023.6",
-      location: "中环，香港",
+      location: "中环，香港 SAR",
     },
   ];
 
