@@ -112,7 +112,7 @@ function IntroSection() {
             <h1 className={`text-2xl font-semibold`}>韩佳明 (Hirsun)</h1>
             <WordPullUp
               className={`text-base md:text-left font-normal mt-1`}
-              words={"22 Y.o. / 香港 / CS & AI / 香港中文大学"}
+              words={"23 Y.o. / 香港 / CS & AI / 香港中文大学"}
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
@@ -258,7 +258,7 @@ function CampusSection() {
       logo: "/campus/cuhk.png",
       department: "信息工程学系",
       degree: "信息工程学, 理学硕士, 在读研究生",
-      period: "2024.9",
+      period: "2024.9 - 2026.3",
       current: true,
     },
     {

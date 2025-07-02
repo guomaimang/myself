@@ -109,10 +109,10 @@ function IntroSection() {
             />
           </div>
           <div className={`flex flex-col justify-center`}>
-            <h1 className={`text-2xl font-semibold`}>Hirsun HAN</h1>
+            <h1 className={`text-2xl font-semibold`}>Hirsun HAN (Jiaming)</h1>
             <WordPullUp
               className={`text-base md:text-left font-normal mt-1`}
-              words={"22 Y.o. / Hong Kong / CS & AI / CUHK"}
+              words={"23 Y.o. / Hong Kong / CS & AI / CUHK"}
             />
 
             <div className="flex flex-wrap mt-2 justify-center">
@@ -258,7 +258,7 @@ function CampusSection() {
       logo: "/campus/cuhk.png",
       department: "Department of Information Engineering",
       degree: "Postgraduate",
-      period: "2024.9",
+      period: "2024.9 - 2026.3",
       current: true,
     },
     {
