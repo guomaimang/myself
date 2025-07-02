@@ -403,16 +403,23 @@ function ProjectSection() {
 function WorkExperienceSection() {
   const experiences = [
     {
+      company: "腾讯香港 (Tencent Hong Kong)",
+      logo: "/logo/txcloud.png",
+      position: "解决方案架构，腾讯云计算",
+      period: "2025.7 至今",
+      location: "尖沙咀，香港",
+    },
+    {
       company: "字节跳动 (抖音集团)",
       logo: "/logo/bytedance.png",
       position: "云计算, 火山引擎",
-      period: "2025.3",
+      period: "2025.3 - 2025.5",
       location: "南山，深圳",
     },
     {
       company: "腾讯科技 (Tencent)",
       logo: "/logo/tencent.png",
-      position: "SRE APP 开发, 腾讯互动娱乐组 (IEG)",
+      position: "APP 开发, 腾讯互动娱乐组 (IEG)",
       period: "2024.5 - 2024.11",
       location: "南山，深圳",
     },

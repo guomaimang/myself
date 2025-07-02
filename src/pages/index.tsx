@@ -403,16 +403,23 @@ function ProjectSection() {
 function WorkExperienceSection() {
   const experiences = [
     {
+      company: "Tencent Hong Kong (腾讯香港)",
+      logo: "/logo/txcloud.png",
+      position: "Solution Architecture, Tencent Cloud",
+      period: "2025.7 - Present",
+      location: "Tsim Sha Tsui, Hong Kong SAR",
+    },
+    {
       company: "Bytedance (字节跳动)",
       logo: "/logo/bytedance.png",
       position: "Cloud Conputing, Volcano Engine (火山引擎)",
-      period: "2025.3",
+      period: "2025.3 - 2025.5",
       location: "Shenzhen, China",
     },
     {
       company: "Tencent (腾讯科技)",
       logo: "/logo/tencent.png",
-      position: "SRE App Development, Interactive Entertainment Group",
+      position: "App Development, Interactive Entertainment Group",
       period: "2024.5 - 2024.11",
       location: "Shenzhen, China",
     },
