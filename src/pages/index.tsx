@@ -258,7 +258,7 @@ function CampusSection() {
       logo: "/campus/cuhk.png",
       department: "Department of Information Engineering",
       degree: "Postgraduate",
-      period: "2024.9 - 2026.3",
+      period: "2024.9",
       current: true,
     },
     {
@@ -405,7 +405,7 @@ function WorkExperienceSection() {
     {
       company: "Tencent Hong Kong (腾讯香港)",
       logo: "/logo/txcloud.png",
-      position: "Solution Architecture, Tencent Cloud",
+      position: "Cloud Architecture, Tencent Cloud",
       period: "2025.7 - Present",
       location: "Tsim Sha Tsui, Hong Kong SAR",
     },
@@ -538,10 +538,8 @@ function SkillSection() {
 
   const techCategories = [
     "SDE",
-    "SRE",
     "AI & LLM",
-    "Solution Architecture",
-    "Customer Success"
+    "Architecture"
   ];
 
   const [isMobile, setIsMobile] = useState(false);

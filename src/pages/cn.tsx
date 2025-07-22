@@ -258,7 +258,7 @@ function CampusSection() {
       logo: "/campus/cuhk.png",
       department: "信息工程学系",
       degree: "信息工程学, 理学硕士, 在读研究生",
-      period: "2024.9 - 2026.3",
+      period: "2024.9",
       current: true,
     },
     {
@@ -405,7 +405,7 @@ function WorkExperienceSection() {
     {
       company: "腾讯香港 (Tencent Hong Kong)",
       logo: "/logo/txcloud.png",
-      position: "解决方案架构，腾讯云计算",
+      position: "云架构工程，腾讯云计算",
       period: "2025.7 至今",
       location: "尖沙咀，香港",
     },
@@ -540,8 +540,7 @@ function SkillSection() {
     "软件开发",
     "SRE",
     "AI & 大模型",
-    "解决方案架构",
-    "客户成功",
+    "架构",
   ];
 
   const [isMobile, setIsMobile] = useState(false);
